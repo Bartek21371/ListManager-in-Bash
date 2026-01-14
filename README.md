@@ -60,6 +60,9 @@ chmod +x todo.sh
 - Validation of file name (no empty file names)
 - No operations outside project folder
 
+## 📝 TODO
+Planned improvements and ideas for this project are listed in
+👉[TODO.md](TODO.md)
 
 ### 👤 Author
 Bartek21731-Bartosz M.
