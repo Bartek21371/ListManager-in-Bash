@@ -35,10 +35,13 @@ git clone git@github.com:Bartek21371/ListManager-in-Bash.git
 cd ListManager-in-Bash
 ```
 ### 2️⃣ Give permissions to run script
+```bash
 chmod +x todo.sh
-
+```
 ### 3️⃣ Run script
+```bash
 ./todo.sh
+```
 
 ## 🖥️ Requritments
 - Linux/macOS
