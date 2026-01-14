@@ -15,12 +15,13 @@ Allowing create,edit,show,delete lists write as text files.
 ## 📂 Structure of files
 
 ListManager-in-Bash/
+├── todo.sh
 ├── list_text/
-│ ├── shopping.txt
-│ ├── work.txt
-│ └── ...
-└── todo.sh
+│   ├── shopping.txt
+│   ├── work.txt
+│   └── ...
 └── README.md
+
 
 > All lists is in folder 'list_text/', creating automatically above script
 
@@ -29,7 +30,6 @@ ListManager-in-Bash/
 ## 🚀 How run script
 
 ### 1️⃣ Clon repo
-'''bash
 git clone git@github.com:Bartek21371/ListManager-in-Bash.git
 cd ListManager-in-Bash
 
@@ -37,7 +37,7 @@ cd ListManager-in-Bash
 chmod +x todo.sh
 
 ### 3️⃣ Run script
-./list_manager.sh
+./todo.sh
 
 ## 🖥️ Requritments
 - Linux/macOS
@@ -45,16 +45,16 @@ chmod +x todo.sh
 - Editor like "nano" for example
 
 ## 🧠 How it works
-Script automatically find own location
-Create folder "list_text/" if not exists
-Every list is single file ".txt"
-Edit of file working in "nano"
-Menu is service by "select"
+1. Script automatically find own location
+2. Create folder "list_text/" if not exists
+3. Every list is single file ".txt"
+4. Edit of file working in "nano"
+5. Menu is service by "select"
 
 ## 🔐Security
-Delete list require confirmation
-Validation of file name (no empty file names)
-No operations outside project folder
+- Delete list require confirmation
+- Validation of file name (no empty file names)
+- No operations outside project folder
 
 
 ### 👤 Author
