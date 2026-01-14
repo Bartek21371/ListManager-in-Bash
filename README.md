@@ -13,7 +13,7 @@ Allowing create,edit,show,delete lists write as text files.
 - 📁 Automation managing folder with lists
 
 ## 📂 Structure of files
-
+'''text
 ListManager-in-Bash/
 ├── todo.sh
 ├── list_text/
@@ -21,7 +21,7 @@ ListManager-in-Bash/
 │   ├── work.txt
 │   └── ...
 └── README.md
-
+'''
 
 > All lists is in folder 'list_text/', creating automatically above script
 
@@ -30,9 +30,10 @@ ListManager-in-Bash/
 ## 🚀 How run script
 
 ### 1️⃣ Clon repo
+'''bash
 git clone git@github.com:Bartek21371/ListManager-in-Bash.git
 cd ListManager-in-Bash
-
+'''
 ### 2️⃣ Give permissions to run script
 chmod +x todo.sh
 
