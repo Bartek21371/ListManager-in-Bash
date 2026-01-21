@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# Define colors of text and fonts
 RED="31"
 BOLDRED="\e[1;${RED}m"
 UNDERLINE_RED="\e[4;${RED}m"
@@ -9,11 +10,12 @@ CYAN="\e[36m"
 ENDCOLOR="\e[0m"
 
 
-
+# Path to directory of lists
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 dir="$SCRIPT_DIR/list_text"
 mkdir -p "$dir"
 
+# Function for create file and opening list
 open_list(){
 	local path="$1"
 	touch "$path"
@@ -22,7 +24,7 @@ open_list(){
 	echo -e "${BOLDGREEN}List closed.${ENDCOLOR}"
 }
 
-
+# Validation of correctness file name
 validation_of_file_name(){
 	local file="$1"
 	if [[ -z "$file" ]]; then
@@ -31,6 +33,7 @@ validation_of_file_name(){
 	fi
 }
 
+# Function for check exist of list (file)
 check_is_list_e(){
 	local file="$1"
 	local path="$dir/$file.txt"
@@ -44,7 +47,7 @@ check_is_list_e(){
 	fi
 }
 
-
+# Function for creating lists
 create_list(){
 	local file
 	read -p "Enter list name: " file
@@ -56,10 +59,10 @@ create_list(){
 	fi
 }
 
-
+# Function for showing existing lists
 show_existing_lists(){
 	if [ -d "$dir" ]; then
-		shopt -s nullglob
+		shopt -s nullglob #nullglob for hide mismatched patterns
 		local files=("$dir"/*.txt)
 		shopt -u nullglob
 		
@@ -71,7 +74,7 @@ show_existing_lists(){
 	fi
 }
 
-
+# Function for delete list with confirmation
 delete_list(){
 	local ask=""
 	local file
@@ -85,7 +88,7 @@ delete_list(){
 		if ! [ -f "$path" ]; then
 			echo -e "${BOLDRED}$file don't exists${ENDCOLOR}"
 		else
-			read -r -p "Are you sure [y/N]: " ask #COLOR YN
+			read -r -p "Are you sure [y/N]: " ask
 			if [[ "$ask" =~ ^([yY]|[yY][eE][sS])$ ]]; then
 				rm "$path"
 				echo -e "${BOLDGREEN}List $file deleted!${ENDCOLOR}"
@@ -96,7 +99,7 @@ delete_list(){
 	fi
 }
 
-
+# Function for open and edit list
 edit_list(){
 	local file
 	read -p "Enter list which you want to edit: " file
@@ -115,7 +118,7 @@ edit_list(){
 	fi
 }
 
-
+# Menu of script
 show_options_and_choose(){
 	clear
 	PS3="Choose option from list (enter number): "
